@@ -1,0 +1,26 @@
+class MailHeaderOutput
+	attr_accessor :company_url
+	attr_accessor :correct_email_format
+	attr_accessor :email_server_type
+	attr_accessor :software_version
+	attr_accessor :security_software
+	attr_accessor :header_contents
+	attr_accessor :firstname_lastname
+	attr_accessor :flastname
+	attr_accessor :name_conflicts
+	attr_accessor :microsoft_exchange
+	attr_accessor :microsoft_exchange_v_4
+	attr_accessor :microsoft_exchange_v5
+	attr_accessor :microsoft_exchange_v_5_5
+	attr_accessor :microsoft_exchange_v_6
+	attr_accessor :microsoft_exchange_v_6_5
+	attr_accessor :microsoft_exchange_v_8
+	attr_accessor :lotus_notes_domino
+	attr_accessor :lotus_notes_domino_version
+	attr_accessor :novell_grouwpise
+	attr_accessor :novell_grouwpise_version
+	attr_accessor :google_apps
+	attr_accessor :other_apps
+	attr_accessor :software_conflicts
+	attr_accessor :software_conflict_version
+end

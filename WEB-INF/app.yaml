@@ -1,0 +1,3 @@
+application: mail-header-parser
+version: 1
+runtime: jruby
