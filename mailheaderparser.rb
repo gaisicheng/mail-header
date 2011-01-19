@@ -39,7 +39,7 @@ class MailHeaderParser
 			  end #end fields.length
 			end #end line rindex
 	end #end def parser_received
-	
+
 	#check the format of the email
 	def check_firstname_lastname(emailAddress)
 		pattern ="//d/"
