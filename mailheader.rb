@@ -8,6 +8,7 @@ class MailHeader
   @@SMTP_CODE_552="552"
   @@SMTP_CODE_553="553"
 	@@SMTP_CODE_554="554"
+  @@UNKNOWN="UNKNOWN"
 
 	def MailHeader.received
 		return @@received
@@ -39,6 +40,10 @@ class MailHeader
 
   def MailHeader.smtp_code_554
     return @@SMTP_CODE_554
+  end
+
+  def MailHeader.unknown
+    return @@UNKNOWN
   end
 
 end

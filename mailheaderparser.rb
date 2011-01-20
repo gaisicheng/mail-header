@@ -6,10 +6,12 @@ class MailHeaderParser
   attr_accessor :mail_header_output
   attr_accessor :count
   attr_accessor :received_value
+  attr_accessor :header_content
   def initialize
   	@count=0
     @mail_header_output=MailHeaderOutput.new
     @received_value=""
+    @header_content=""
   end
 
   def get_mail_header_output
@@ -21,16 +23,19 @@ class MailHeaderParser
 		# read mail header from the file
 		file= File.open("header.txt","r")
 		file.each_line { |line|
+      get_header_content(line)
 			#parser received value from mail header
 			parser_received(line)
       parser_email(line)
 		}
 	end
 	def get_header_content(line)
-    header_content=header_content+line;
-    if line=="\r\n" or line.strip.empty?
-
-    end
+#    @header_content=@header_content+line
+#    if line.strip.length==0 or line.strip.empty?
+#    mail_header_output.header_contents=@header_content
+#      return @header_content
+#    end
+     mail_header_output.header_contents=mail_header_output.header_contents+line
   end
 
 	#parser the received from the mail header
@@ -45,7 +50,7 @@ class MailHeaderParser
       if line.include? MailHeader.key_separator
         if received_value.start_with? MailHeader.received
           #get the received value
-          puts @received_value
+#          puts @received_value
         end
         @received_value=""
       else
@@ -55,7 +60,9 @@ class MailHeaderParser
 
     # parser the received from the mail header
     if received_value.include? MailHeader.smtp_code_550 or received_value.include? MailHeader.smtp_code_551 or received_value.include? MailHeader.smtp_code_553 or received_value.include? MailHeader.smtp_code_554
-
+      mail_header_output.correct_email_format=MailHeader.unknown
+    elseif received_value.include? MailHeader.smtp_code_552
+        #the address is correct
     end
 	end #end parser_received
 
@@ -71,8 +78,8 @@ class MailHeaderParser
           company_url="www."+email_address.split('@')[1];
           # if the email address is not contains the '@',the address is not correct
           unless email_address.include? "@"
-            mail_header_output.firstname_lastname="UNKNOWN"
-            mail_header_output.flastname="UNKNOWN"
+            mail_header_output.firstname_lastname=MailHeader.unknown
+            mail_header_output.flastname=MailHeader.unknown
           end
           mail_header_output.company_url=company_url
           check_firstname_lastname(email_address)
@@ -104,6 +111,9 @@ class MailHeaderParser
 	#check the name whether conflicts
 	def check_email_name_conflict()
     mail_header_output.name_conflicts = mail_header_output.firstname_lastname && mail_header_output.flastname
+    if (!mail_header_output.firstname_lastname && !mail_header_output.flastname)
+      mail_header_output.correct_email_format=MailHeader.unknown
+    end
 	end #end check_name_conflicts
 
   def generate_csv
