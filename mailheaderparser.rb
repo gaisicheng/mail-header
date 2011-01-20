@@ -27,6 +27,7 @@ class MailHeaderParser
 			#parser received value from mail header
 			parser_received(line)
       parser_email(line)
+      check_microsoft_exchange(line)
 		}
 	end
 	def get_header_content(line)
@@ -88,6 +89,13 @@ class MailHeaderParser
         end #end value.length
       end #end fields.length
     end #end line rindex
+  end
+
+  def check_microsoft_exchange(line)
+    line=line.downcase
+    if line.include? MailHeader.microsoft or line.include? MailHeader.microsoft or line.include? MailHeader.microsoft or line.include? MailHeader.microsoft
+      mail_header_output.microsoft_exchange=true;
+    end
   end
   
 	#check the format of the email whether is firstname.lastname

@@ -9,6 +9,10 @@ class MailHeader
   @@SMTP_CODE_553="553"
 	@@SMTP_CODE_554="554"
   @@UNKNOWN="UNKNOWN"
+  @@microsoft="microsoft"
+  @@exchange="exchange"
+  @@MimeOLE="MimeOLE"
+  @@Xwall="Xwall"
 
 	def MailHeader.received
 		return @@received
@@ -44,6 +48,22 @@ class MailHeader
 
   def MailHeader.unknown
     return @@UNKNOWN
+  end
+
+  def MailHeader.microsoft
+    return @@microsoft
+  end
+
+  def MailHeader.exchange
+    return @@exchange
+  end
+
+  def MailHeader.MimeOLE
+    return @@MimeOLE
+  end
+
+  def MailHeader.Xwall
+    return @@Xwall
   end
 
 end
