@@ -5,9 +5,11 @@ require 'CSV'
 class MailHeaderParser
   attr_accessor :mail_header_output
   attr_accessor :count
+  attr_accessor :received_value
   def initialize
   	@count=0
     @mail_header_output=MailHeaderOutput.new
+    @received_value=""
   end
 
   def get_mail_header_output
@@ -20,45 +22,59 @@ class MailHeaderParser
 		file= File.open("header.txt","r")
 		file.each_line { |line|
 			#parser received value from mail header
-      @count=@count+1
 			parser_received(line)
       parser_email(line)
 		}
 	end
-	
+	def get_header_content(line)
+    header_content=header_content+line;
+    if line=="\r\n" or line.strip.empty?
+
+    end
+  end
+
 	#parser the received from the mail header
 	def parser_received(line)
 		if line.include? MailHeader.received
-      fields=line.split(MailHeader.key_separator)
-      key=fields[0]
-      #puts "Key is :" +key
-      if fields.length>1
-				value=fields[1].split(" ")
-        if value.length>1
-          received_value=value[1]
-          #ip regex
-          ip_regex=/^(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])$/
-          domain_regex=/([a-zA-z0-9]\.).*/
-          if ip_regex.match(received_value)==nil && domain_regex.match(received_value)!=nil && @count==3
-            mail_header_output.company_url=received_value
-          end
-          return received_value
-        end #end value.length
+      @count=@count+1
+#      fields=line.split(MailHeader.key_separator)
+      if line.length>1
+          @received_value=@received_value+line
       end #end fields.length
-    end #end line rindex
-	end #end def parser_received
+    else
+      if line.include? MailHeader.key_separator
+        if received_value.start_with? MailHeader.received
+          #get the received value
+          puts @received_value
+        end
+        @received_value=""
+      else
+        @received_value=@received_value+line
+      end
+    end #end line include?
+
+    # parser the received from the mail header
+    if received_value.include? MailHeader.smtp_code_550 or received_value.include? MailHeader.smtp_code_551 or received_value.include? MailHeader.smtp_code_553 or received_value.include? MailHeader.smtp_code_554
+
+    end
+	end #end parser_received
 
   #parser email address from the mail header
   def parser_email(line)
     if line.include? MailHeader.from
       fields=line.split(MailHeader.key_separator)
-      key=fields[0]
-      #puts "Key is :" +key
       if fields.length>1
 				value=fields[1].split(" ")
         if value.length>1
           firstname_lastname=value[0];
           email_address=value[1].gsub(/[<>]/,'')
+          company_url="www."+email_address.split('@')[1];
+          # if the email address is not contains the '@',the address is not correct
+          unless email_address.include? "@"
+            mail_header_output.firstname_lastname="UNKNOWN"
+            mail_header_output.flastname="UNKNOWN"
+          end
+          mail_header_output.company_url=company_url
           check_firstname_lastname(email_address)
           check_flastname(email_address)
           check_email_name_conflict()
