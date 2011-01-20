@@ -1,97 +1,43 @@
-From postmaster@local-mailhost.sra.com Tue Dec 28 00:18:51 2010
-Delivered-To: harold.georges@teleture.com
-Received: by 10.147.99.4 with SMTP id b4cs41936yam;
-        Mon, 27 Dec 2010 14:18:51 -0800 (PST)
-Received: by 10.229.190.204 with SMTP id dj12mr5359074qcb.101.1293488331009;
-        Mon, 27 Dec 2010 14:18:51 -0800 (PST)
-Return-Path: <>
-Received: from mailport2.sra.com (mailport2.sra.com [163.252.95.102])
-        by mx.google.com with ESMTP id d13si9728645vcs.5.2010.12.27.14.18.50;
-        Mon, 27 Dec 2010 14:18:50 -0800 (PST)
-Received-SPF: pass (google.com: best guess record for domain of mailport2.sra.com designates 163.252.95.102 as permitted sender) client-ip=163.252.95.102;
-Authentication-Results: mx.google.com; spf=pass (google.com: best guess record for domain of mailport2.sra.com designates 163.252.95.102 as permitted sender) smtp.mail=
-X-MAILPORT: This message was handled by the Ironport
-X-SENDER-IP: 163.252.31.55
-X-SENDER-REPUTATION: 2.9
-X-IronPort-Anti-Spam-Filtered: true
-X-IronPort-Anti-Spam-Result: AoMIACqfGE2j/B83gWdsb2JhbACCWJM5AQGOGxUBARYiJLcWiBeFToRl
-X-IronPort-AV: E=Sophos;i=""4.60,236,1291611600""; 
-   d=""scan'208"";a=""70117300""
-Received: from mailhost2.sra.com ([163.252.31.55])
-  by mailport2.sra.com with ESMTP; 27 Dec 2010 17:18:50 -0500
-From: postmaster@local-mailhost.sra.com
-To: harold.georges@teleture.com
-Date: Mon, 27 Dec 2010 17:18:50 -0500
+Received: from in02.filter.mail.rninc.net (63.101.50.84) by
+ mail.shinetechchina.com (10.10.10.14) with Microsoft SMTP Server id
+ 8.1.436.0; Mon, 17 Jan 2011 15:46:41 +0800
+Received: from us01.mail.rninc.net (us01.mail.rninc.net [63.101.50.17])	by
+ in02.filter.mail.rninc.net (8.12.11/8.12.11/infilter) with ESMTP id
+ p0H7kbxH006615	for <d-gairy@shinetechchina.com>; Mon, 17 Jan 2011 01:46:38
+ -0600
+Received: from m13-57.163.com (m13-57.163.com [220.181.13.57])	by
+ us01.mail.rninc.net (8.12.11/8.12.11/mx) with ESMTP id p0H7kKFl020199	for
+ <d-gairy@shinetechchina.com>; Mon, 17 Jan 2011 01:46:32 -0600
+Received: from lovesesame ( [123.124.143.254] ) by ajax-webmail-wmsvr57
+ (Coremail) ; Mon, 17 Jan 2011 15:46:16 +0800 (CST)
+Date: Mon, 17 Jan 2011 15:46:16 +0800
+From: lovesesame <lovesesame@163.com>
+To: <d-gairy@shinetechchina.com>
+Message-ID: <2a467369.2996.12d92f04717.Coremail.lovesesame@163.com>
+Subject: Test
 MIME-Version: 1.0
-Content-Type: multipart/report; report-type=delivery-status;
-	boundary=""9B095B5ADSN=_01CB9E61F032B56400021628mailhost2.sra.co""
-X-DSNContext: 335a7efd - 4523 - 00000001 - 80040546
-Message-ID: <06Z4OB4in0000f1e4@mailhost2.sra.com>
-Subject: Delivery Status Notification (Failure)
-
-This is a MIME-formatted message.  
-Portions of this message may be unreadable without a MIME-capable mail program.
-
---9B095B5ADSN=_01CB9E61F032B56400021628mailhost2.sra.co
-Content-Type: text/plain; charset=unicode-1-1-utf-7
-
-This is an automatically generated Delivery Status Notification.
-
-Delivery to the following recipients failed.
-
-       Don.Edwards@sra.com
-
-
-
-
---9B095B5ADSN=_01CB9E61F032B56400021628mailhost2.sra.co
-Content-Type: message/delivery-status
-
-Reporting-MTA: dns;mailhost2.sra.com
-Received-From-MTA: dns;mailport2.sra.com
-Arrival-Date: Mon, 27 Dec 2010 17:18:50 -0500
-
-Final-Recipient: rfc822;Don.Edwards@sra.com
-Action: failed
-Status: 5.1.1
-
---9B095B5ADSN=_01CB9E61F032B56400021628mailhost2.sra.co
-Content-Type: message/rfc822
-
-Received: from mailport2.sra.com ([163.252.95.102]) by mailhost2.sra.com with Microsoft SMTPSVC(6.0.3790.4675);
-	 Mon, 27 Dec 2010 17:18:50 -0500
-X-MAILPORT: This message was handled by the Ironport
-X-SENDER-IP: 209.85.213.44
-X-SENDER-REPUTATION: 4.4
-X-Cloudmark-SP-Filtered: true
-X-IronPort-Anti-Spam-Filtered: true
-X-IronPort-Anti-Spam-Result: At4AACqfGE3RVdUskGdsb2JhbACWEQGNQ1EIFQEBAQEJCQwHEQQgpWyZQYVKBIsE
-X-IronPort-AV: E=Sophos;i=""4.60,236,1291611600""; 
-   d=""scan'208"";a=""70117299""
-Received: from mail-yw0-f44.google.com ([209.85.213.44])
-  by mailport2.sra.com with ESMTP/TLS/RC4-MD5; 27 Dec 2010 17:18:50 -0500
-Received: by ywk9 with SMTP id 9so3837384ywk.3
-        for <Don.Edwards@Sra.com>; Mon, 27 Dec 2010 14:18:49 -0800 (PST)
-MIME-Version: 1.0
-Received: by 10.150.97.9 with SMTP id u9mt25408455ybb.325.1293487930846; Mon,
- 27 Dec 2010 14:12:10 -0800 (PST)
-Received: by 10.147.99.4 with HTTP; Mon, 27 Dec 2010 14:12:10 -0800 (PST)
-Date: Tue, 28 Dec 2010 00:12:10 +0200
-Message-ID: <AANLkTi=6H8Q9+Hp5jZxNH6a7rMDO0Y16t6nsaSBsGZKa@mail.gmail.com>
-Subject: Happy Holidays
-From: Harold Georges <harold.georges@teleture.com>
-Content-Type: multipart/alternative; boundary=000e0cd404f26af71704986bb893
-Bcc:
-Return-Path: harold.georges@teleture.com
-X-OriginalArrivalTime: 27 Dec 2010 22:18:50.0275 (UTC) FILETIME=[09B73730:01CBA614]
-
---000e0cd404f26af71704986bb893
-Content-Type: text/plain; charset=ISO-8859-1
-
-Wising you and your family a Happy Holidays from my self and all the team at
-Teleture Office Supplies. We look forward to your business next year!
-
-
-Harold Georges
-
-CEO, Teleture
+Content-Type: multipart/alternative;
+	boundary="----=_Part_28472_174040697.1295250376471"
+X-Originating-IP: [123.124.143.254]
+X-Priority: 3
+X-Mailer: Coremail Webmail Server Version SP_ntes V3.5 build
+ 101227(12597.3587.3569) Copyright (c) 2002-2011 www.mailtech.cn 163com
+X-CM-CTRLDATA: I9L7F2Zvb3Rlcl9odG09NjA6ODE=
+X-CM-TRANSID: OcGowKDLm+7J8zNN8DkAAA--.15W
+X-CM-SenderInfo: 5oryv25hvdzvi6rwjhhfrp/1tbiFgPJeD-6XWbOZAAAsw
+X-Coremail-Antispam: 1U5529EdanIXcx71UUUUU7vcSsGvfC2KfnxnUU==
+X-Reliable-Filter-System-HostMessageHistory: Message logged for 220.181.13.57
+X-Reliable-Filter-Util-CheckReturnPath: OK Return-Path and From Match .163.com .163.com
+Received-SPF: Fail (Exchange2007.shinetechchina.com: domain of
+ lovesesame@163.com does not designate 63.101.50.84 as permitted sender)
+ receiver=Exchange2007.shinetechchina.com; client-ip=63.101.50.84;
+ helo=in02.filter.mail.rninc.net;
+Received-SPF: pass (shuni.reliablenetworks.net: domain of lovesesame@163.com designates 220.181.13.57 as permitted sender)
+X-Reliable-Filter-Util-SenderPolicyFramework: OK - 220.181.13.57 is allowed to send mail from lovesesame@163.com
+Return-Path: lovesesame@163.com
+X-MS-Exchange-Organization-PRD: 163.com
+X-MS-Exchange-Organization-SenderIdResult: Fail
+X-MS-Exchange-Organization-SCL: 2
+X-MS-Exchange-Organization-PCL: 2
+X-MS-Exchange-Organization-Antispam-Report:
+ DV:3.3.7405.660;SID:SenderIDStatus Fail;OrigIP:63.101.50.84
