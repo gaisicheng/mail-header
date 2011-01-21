@@ -1,2 +1,2 @@
-require 'guestbook'
+require 'app'
 run Sinatra::Application

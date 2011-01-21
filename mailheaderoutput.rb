@@ -44,11 +44,11 @@ class MailHeaderOutput
     @microsoft_exchange_v_8=false
     @lotus_notes_domino=false
     @lotus_notes_domino_version=""
-    @novell_grouwpise=""
+    @novell_grouwpise=false
     @novell_grouwpise_version=""
-    @google_apps=""
-    @other_apps=""
-    @software_conflicts=""
-    @software_conflict_version=""
+    @google_apps=false
+    @other_apps=false
+    @software_conflicts=false
+    @software_conflict_version=false
   end
 end

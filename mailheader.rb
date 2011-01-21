@@ -1,18 +1,19 @@
 class MailHeader
 	public
-	@@received="Received: "
+	@@received="received: "
 	@@key_separator=": "
-  @@from="From: "
+  @@from="from: "
   @@SMTP_CODE_550="550"
   @@SMTP_CODE_551="551"
   @@SMTP_CODE_552="552"
   @@SMTP_CODE_553="553"
 	@@SMTP_CODE_554="554"
   @@UNKNOWN="UNKNOWN"
+  @@NULL="NULL"
   @@microsoft="microsoft"
   @@exchange="exchange"
-  @@MimeOLE="MimeOLE"
-  @@Xwall="Xwall"
+  @@MimeOLE="mimeole"
+  @@Xwall="xwall"
 
 	def MailHeader.received
 		return @@received
@@ -48,6 +49,10 @@ class MailHeader
 
   def MailHeader.unknown
     return @@UNKNOWN
+  end
+
+  def MailHeader.null
+    return @@NULL
   end
 
   def MailHeader.microsoft

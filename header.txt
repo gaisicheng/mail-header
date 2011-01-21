@@ -20,7 +20,8 @@ Content-Type: multipart/alternative;
 	boundary="----=_Part_28472_174040697.1295250376471"
 X-Originating-IP: [123.124.143.254]
 X-Priority: 3
-X-Mailer: Coremail Webmail Server Version SP_ntes V3.5 build
+X-Mailer: Websense: SP_ntes V3.5 build domino release 5.8.1 book
+X-Mailer: Coremail Webmail Server Version SP_ntes V3.5 build domino release 5.8.1 book
  101227(12597.3587.3569) Copyright (c) 2002-2011 www.mailtech.cn 163com
 X-CM-CTRLDATA: I9L7F2Zvb3Rlcl9odG09NjA6ODE=
 X-CM-TRANSID: OcGowKDLm+7J8zNN8DkAAA--.15W
